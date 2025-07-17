@@ -1,19 +1,14 @@
 function niceMap (key, role){
+  const headers = { admin:0, manager:1, peon:2, other:3, averylongone:4, small:5 }
+  return {
+      //      admin | manager | peon | other | averylongone | small
+      one:   [  1,       1,      1,      1,         1,          1, ],
+      two:   [  1,       1,      1,      1,         1,          1, ],
+      three: [  1,       1,      1,      1,         1,          1, ],
+      four:  [  1,       1,      1,      1,         1,          1, ],
+      five:  [  1,       1,      1,      1,         1,          1, ],
+      six:   [  1,       1,      1,      1,         1,          1, ],
+      seven: [  1,       1,      1,      1,         1,          1, ],
 
-    const roles = {admin: 0, manager: 1, underling: 2, peon: 3}
-
-    return !!{
-        //            Admin | Manager | Underling | Peon
-        FeatureOne:   [ 1,       1,        1,         1 ],
-        FeatureTwo:   [ 0,       1,        1,         1 ],
-        FeatureThree: [ 1,       1,        1,         1 ],
-        FeatureFour:  [ 1,       1,        1,         1 ],
-        FeatureFive:  [ 1,       1,        1,         1 ],
-        
-    }[key][roles[role]];
-
+  }[key][headers[role]];
 }
-
-console.log(niceMap('FeatureOne', 'admin')); // 1
-console.log(niceMap('FeatureOne', 'peon')); // 1
-console.log(niceMap('FeatureTwo', 'admin')); // 0
